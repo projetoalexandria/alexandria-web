@@ -1,0 +1,122 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBookLabel" translate="alexandriaApp.book.home.createOrEditLabel">Create or edit a Book</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.book.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.book.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.book.title"
+                    required />
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.book.subtitle" for="field_subtitle">Subtitle</label>
+            <input type="text" class="form-control" name="subtitle" id="field_subtitle"
+                    ng-model="vm.book.subtitle"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.book.ibsn" for="field_ibsn">Ibsn</label>
+            <input type="text" class="form-control" name="ibsn" id="field_ibsn"
+                    ng-model="vm.book.ibsn"
+                    required />
+            <div ng-show="editForm.ibsn.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ibsn.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.book.editionNumber" for="field_editionNumber">EditionNumber</label>
+            <input type="number" class="form-control" name="editionNumber" id="field_editionNumber"
+                    ng-model="vm.book.editionNumber"
+                    required />
+            <div ng-show="editForm.editionNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.editionNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.editionNumber.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.book.keywords" for="field_keywords">Keywords</label>
+            <input type="text" class="form-control" name="keywords" id="field_keywords"
+                    ng-model="vm.book.keywords"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.book.publicationDate" for="field_publicationDate">PublicationDate</label>
+                <div class="input-group">
+                    <input id="field_publicationDate" type="text" class="form-control" name="publicationDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.book.publicationDate" is-open="vm.datePickerOpenStatus.publicationDate"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('publicationDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.publicationDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.publicationDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="alexandriaApp.book.ageBracket" for="field_ageBracket">ageBracket</label>
+            <select class="form-control" id="field_ageBracket" name="ageBracket" ng-model="vm.book.ageBracket" ng-options="ageBracket as ageBracket.description for ageBracket in vm.agebrackets track by ageBracket.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="alexandriaApp.book.acquisitionType" for="field_acquisitionType">acquisitionType</label>
+            <select class="form-control" id="field_acquisitionType" name="acquisitionType" ng-model="vm.book.acquisitionType" ng-options="acquisitionType as acquisitionType.description for acquisitionType in vm.acquisitiontypes track by acquisitionType.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="alexandriaApp.book.publishingHouse" for="field_publishingHouse">publishingHouse</label>
+            <select class="form-control" id="field_publishingHouse" name="publishingHouse" ng-model="vm.book.publishingHouse" ng-options="publishingHouse as publishingHouse.name for publishingHouse in vm.publishinghouses track by publishingHouse.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="alexandriaApp.book.gender" for="field_gender">gender</label>
+            <select class="form-control" id="field_gender" name="gender" ng-model="vm.book.gender" ng-options="gender as gender.name for gender in vm.genders track by gender.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="alexandriaApp.book.author" for="field_author">author</label>
+            <select class="form-control" id="field_author" multiple name="author" ng-model="vm.book.authors" ng-options="author as author.name for author in vm.authors track by author.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

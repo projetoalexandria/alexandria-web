@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span translate="alexandriaApp.school.detail.title">School</span> {{vm.school.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="alexandriaApp.school.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.school.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.fantasyName">FantasyName</dt></dt>
+        <dd>
+            <span>{{vm.school.fantasyName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.code">Code</dt></dt>
+        <dd>
+            <span>{{vm.school.code}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.addressNumber">AddressNumber</dt></dt>
+        <dd>
+            <span>{{vm.school.addressNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.phone">Phone</dt></dt>
+        <dd>
+            <span>{{vm.school.phone}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.email">Email</dt></dt>
+        <dd>
+            <span>{{vm.school.email}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.site">Site</dt></dt>
+        <dd>
+            <span>{{vm.school.site}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.mecNumber">MecNumber</dt></dt>
+        <dd>
+            <span>{{vm.school.mecNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.cep">cep</span></dt>
+        <dd>
+            <a ui-sref="cep-detail({id:vm.school.cep.id})">{{vm.school.cep.number}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.school.responsible">responsible</span></dt>
+        <dd>
+            {{vm.school.responsible.firstName}}
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

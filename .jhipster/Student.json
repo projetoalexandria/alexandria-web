@@ -1,0 +1,49 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "cep",
+            "otherEntityName": "cep",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "number"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "documentId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "addressNumber",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160516002616",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "student",
+    "pagination": "no"
+}

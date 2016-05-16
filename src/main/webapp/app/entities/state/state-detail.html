@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="alexandriaApp.state.detail.title">State</span> {{vm.state.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="alexandriaApp.state.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.state.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.state.acronym">Acronym</dt></dt>
+        <dd>
+            <span>{{vm.state.acronym}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.state.country">country</span></dt>
+        <dd>
+            <a ui-sref="country-detail({id:vm.state.country.id})">{{vm.state.country.description}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

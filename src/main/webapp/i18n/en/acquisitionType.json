@@ -1,0 +1,22 @@
+{
+    "alexandriaApp": {
+        "acquisitionType" : {
+            "home": {
+                "title": "AcquisitionTypes",
+                "createLabel": "Create a new AcquisitionType",
+                "createOrEditLabel": "Create or edit a AcquisitionType",
+                "search": "Search for AcquisitionType"
+            },
+            "created": "A new AcquisitionType is created with identifier {{ param }}",
+            "updated": "A AcquisitionType is updated with identifier {{ param }}",
+            "deleted": "A AcquisitionType is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AcquisitionType {{ id }}?"
+            },
+            "detail": {
+                "title": "AcquisitionType"
+            },
+            "description": "Description"
+        }
+    }
+}

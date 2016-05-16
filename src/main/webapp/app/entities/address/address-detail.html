@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="alexandriaApp.address.detail.title">Address</span> {{vm.address.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="alexandriaApp.address.street">Street</dt></dt>
+        <dd>
+            <span>{{vm.address.street}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.address.reference">Reference</dt></dt>
+        <dd>
+            <span>{{vm.address.reference}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.address.neighborhood">neighborhood</span></dt>
+        <dd>
+            <a ui-sref="neighborhood-detail({id:vm.address.neighborhood.id})">{{vm.address.neighborhood.description}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

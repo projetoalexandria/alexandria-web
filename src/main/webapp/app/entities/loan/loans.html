@@ -1,0 +1,70 @@
+<div>
+    <h2 translate="alexandriaApp.loan.home.title">Loans</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="loan.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="alexandriaApp.loan.home.createLabel">
+                        Create new Loan
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="alexandriaApp.loan.description">Description</span></th>
+                    <th><span translate="alexandriaApp.loan.loanDate">LoanDate</span></th>
+                    <th><span translate="alexandriaApp.loan.devolutionDate">DevolutionDate</span></th>
+                    <th><span translate="alexandriaApp.loan.maxDevolutionDate">MaxDevolutionDate</span></th>
+                    <th><span translate="alexandriaApp.loan.student">student</span></th>
+                    <th><span translate="alexandriaApp.loan.book">book</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="loan in vm.loans track by loan.id">
+                    <td><a ui-sref="loan-detail({id:loan.id})">{{loan.id}}</a></td>
+                    <td>{{loan.description}}</td>
+                        <td>{{loan.loanDate | date:'mediumDate'}}</td>
+                        <td>{{loan.devolutionDate | date:'mediumDate'}}</td>
+                        <td>{{loan.maxDevolutionDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="student-detail({id:loan.student.id})">{{loan.student.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="book-detail({id:loan.book.id})">{{loan.book.title}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="loan-detail({id:loan.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="loan.edit({id:loan.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="loan.delete({id:loan.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "neighborhood",
+            "otherEntityName": "neighborhood",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "description"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "street",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "reference",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160515223918",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "address",
+    "pagination": "no"
+}

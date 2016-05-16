@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515213739_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515214618_added_entity_State.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515215845_added_entity_City.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515222001_added_entity_Neighborhood.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515223918_added_entity_Address.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515225649_added_entity_Cep.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515233307_added_entity_School.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516000125_added_entity_AgeBracket.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516000709_added_entity_AcquisitionType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516000756_added_entity_Gender.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516000935_added_entity_Author.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516002616_added_entity_Student.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516003833_added_entity_PublishingHouse.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516010421_added_entity_Book.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160516013048_added_entity_Loan.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+</databaseChangeLog>

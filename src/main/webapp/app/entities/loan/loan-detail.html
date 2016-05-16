@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="alexandriaApp.loan.detail.title">Loan</span> {{vm.loan.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="alexandriaApp.loan.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.loan.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.loan.loanDate">LoanDate</dt></dt>
+        <dd>
+            <span>{{vm.loan.loanDate | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.loan.devolutionDate">DevolutionDate</dt></dt>
+        <dd>
+            <span>{{vm.loan.devolutionDate | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.loan.maxDevolutionDate">MaxDevolutionDate</dt></dt>
+        <dd>
+            <span>{{vm.loan.maxDevolutionDate | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.loan.student">student</span></dt>
+        <dd>
+            <a ui-sref="student-detail({id:vm.loan.student.id})">{{vm.loan.student.name}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.loan.book">book</span></dt>
+        <dd>
+            <a ui-sref="book-detail({id:vm.loan.book.id})">{{vm.loan.book.title}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

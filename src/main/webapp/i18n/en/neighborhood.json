@@ -1,0 +1,23 @@
+{
+    "alexandriaApp": {
+        "neighborhood" : {
+            "home": {
+                "title": "Neighborhoods",
+                "createLabel": "Create a new Neighborhood",
+                "createOrEditLabel": "Create or edit a Neighborhood",
+                "search": "Search for Neighborhood"
+            },
+            "created": "A new Neighborhood is created with identifier {{ param }}",
+            "updated": "A Neighborhood is updated with identifier {{ param }}",
+            "deleted": "A Neighborhood is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Neighborhood {{ id }}?"
+            },
+            "detail": {
+                "title": "Neighborhood"
+            },
+            "description": "Description",
+            "city": "City"
+        }
+    }
+}

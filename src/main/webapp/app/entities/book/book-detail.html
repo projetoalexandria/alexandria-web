@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span translate="alexandriaApp.book.detail.title">Book</span> {{vm.book.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="alexandriaApp.book.title">Title</dt></dt>
+        <dd>
+            <span>{{vm.book.title}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.subtitle">Subtitle</dt></dt>
+        <dd>
+            <span>{{vm.book.subtitle}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.ibsn">Ibsn</dt></dt>
+        <dd>
+            <span>{{vm.book.ibsn}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.editionNumber">EditionNumber</dt></dt>
+        <dd>
+            <span>{{vm.book.editionNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.keywords">Keywords</dt></dt>
+        <dd>
+            <span>{{vm.book.keywords}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.publicationDate">PublicationDate</dt></dt>
+        <dd>
+            <span>{{vm.book.publicationDate | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.ageBracket">ageBracket</span></dt>
+        <dd>
+            <a ui-sref="age-bracket-detail({id:vm.book.ageBracket.id})">{{vm.book.ageBracket.description}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.acquisitionType">acquisitionType</span></dt>
+        <dd>
+            <a ui-sref="acquisition-type-detail({id:vm.book.acquisitionType.id})">{{vm.book.acquisitionType.description}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.publishingHouse">publishingHouse</span></dt>
+        <dd>
+            <a ui-sref="publishing-house-detail({id:vm.book.publishingHouse.id})">{{vm.book.publishingHouse.name}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.gender">gender</span></dt>
+        <dd>
+            <a ui-sref="gender-detail({id:vm.book.gender.id})">{{vm.book.gender.name}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.book.author">author</span></dt>
+        <dd>
+            <span ng-repeat="author in vm.book.authors">
+                <a ui-sref="author-detail({id: {{author.id}}})">{{author.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,24 @@
+{
+    "alexandriaApp": {
+        "ageBracket" : {
+            "home": {
+                "title": "AgeBrackets",
+                "createLabel": "Create a new AgeBracket",
+                "createOrEditLabel": "Create or edit a AgeBracket",
+                "search": "Search for AgeBracket"
+            },
+            "created": "A new AgeBracket is created with identifier {{ param }}",
+            "updated": "A AgeBracket is updated with identifier {{ param }}",
+            "deleted": "A AgeBracket is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AgeBracket {{ id }}?"
+            },
+            "detail": {
+                "title": "AgeBracket"
+            },
+            "description": "Description",
+            "minAge": "MinAge",
+            "maxAge": "MaxAge"
+        }
+    }
+}

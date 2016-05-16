@@ -1,0 +1,64 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "cep",
+            "otherEntityName": "cep",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "number"
+        },
+        {
+            "relationshipName": "responsible",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "firstName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fantasyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addressNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "site",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mecNumber",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160515233307",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "school",
+    "pagination": "no"
+}

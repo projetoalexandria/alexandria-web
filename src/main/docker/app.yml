@@ -1,0 +1,15 @@
+version: '2'
+services:
+    alexandria-app:
+        image: alexandria
+        external_links:
+            - alexandria-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/alexandria?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    alexandria-mysql:
+        extends:
+            file: mysql.yml
+            service: alexandria-mysql

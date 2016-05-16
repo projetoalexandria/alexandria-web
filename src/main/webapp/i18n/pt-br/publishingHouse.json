@@ -1,0 +1,31 @@
+{
+    "alexandriaApp": {
+        "publishingHouse" : {
+            "home": {
+                "title": "PublishingHouses",
+                "createLabel": "Create a new PublishingHouse",
+                "createOrEditLabel": "Create or edit a PublishingHouse",
+                "search": "Search for PublishingHouse"
+            },
+            "created": "A new PublishingHouse is created with identifier {{ param }}",
+            "updated": "A PublishingHouse is updated with identifier {{ param }}",
+            "deleted": "A PublishingHouse is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PublishingHouse {{ id }}?"
+            },
+            "detail": {
+                "title": "PublishingHouse"
+            },
+            "name": "Name",
+            "nationality": "Nationality",
+            "cnpj": "Cnpj",
+            "site": "Site",
+            "email": "Email",
+            "additionalInformation": "AdditionalInformation",
+            "active": "Active",
+            "addressNumber": "AddressNumber",
+            "phone": "Phone",
+            "cep": "Cep"
+        }
+    }
+}

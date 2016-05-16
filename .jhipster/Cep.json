@@ -1,0 +1,24 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "address",
+            "otherEntityName": "address",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "street"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "number",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160515225649",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "cep",
+    "pagination": "no"
+}

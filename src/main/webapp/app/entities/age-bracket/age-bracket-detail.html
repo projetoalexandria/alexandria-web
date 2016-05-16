@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="alexandriaApp.ageBracket.detail.title">AgeBracket</span> {{vm.ageBracket.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="alexandriaApp.ageBracket.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.ageBracket.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.ageBracket.minAge">MinAge</dt></dt>
+        <dd>
+            <span>{{vm.ageBracket.minAge}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="alexandriaApp.ageBracket.maxAge">MaxAge</dt></dt>
+        <dd>
+            <span>{{vm.ageBracket.maxAge}}<span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

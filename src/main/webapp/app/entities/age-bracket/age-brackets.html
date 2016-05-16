@@ -1,0 +1,60 @@
+<div>
+    <h2 translate="alexandriaApp.ageBracket.home.title">AgeBrackets</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="age-bracket.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="alexandriaApp.ageBracket.home.createLabel">
+                        Create new AgeBracket
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="alexandriaApp.ageBracket.description">Description</span></th>
+                    <th><span translate="alexandriaApp.ageBracket.minAge">MinAge</span></th>
+                    <th><span translate="alexandriaApp.ageBracket.maxAge">MaxAge</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ageBracket in vm.ageBrackets track by ageBracket.id">
+                    <td><a ui-sref="age-bracket-detail({id:ageBracket.id})">{{ageBracket.id}}</a></td>
+                    <td>{{ageBracket.description}}</td>
+                    <td>{{ageBracket.minAge}}</td>
+                    <td>{{ageBracket.maxAge}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="age-bracket-detail({id:ageBracket.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="age-bracket.edit({id:ageBracket.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="age-bracket.delete({id:ageBracket.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

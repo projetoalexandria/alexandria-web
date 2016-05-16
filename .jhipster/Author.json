@@ -1,0 +1,32 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "site",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "bibliography",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160516000935",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "author",
+    "pagination": "no"
+}

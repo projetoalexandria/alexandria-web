@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle"/>
+
+    <!--
+        Added the entity Loan.
+    -->
+    <changeSet id="20160516013048" author="jhipster">
+        <createTable tableName="loan">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="loan_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="devolution_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="max_devolution_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="student_id" type="bigint"/>
+            <column name="book_id" type="bigint"/>
+            <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="student_id"
+                                 baseTableName="loan"
+                                 constraintName="fk_loan_student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="loan"
+                                 constraintName="fk_loan_book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+    </changeSet>
+</databaseChangeLog>

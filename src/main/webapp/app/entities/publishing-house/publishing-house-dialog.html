@@ -1,0 +1,134 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPublishingHouseLabel" translate="alexandriaApp.publishingHouse.home.createOrEditLabel">Create or edit a PublishingHouse</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.publishingHouse.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.publishingHouse.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.nationality" for="field_nationality">Nationality</label>
+            <input type="text" class="form-control" name="nationality" id="field_nationality"
+                    ng-model="vm.publishingHouse.nationality"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.cnpj" for="field_cnpj">Cnpj</label>
+            <input type="number" class="form-control" name="cnpj" id="field_cnpj"
+                    ng-model="vm.publishingHouse.cnpj"
+                    required />
+            <div ng-show="editForm.cnpj.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cnpj.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cnpj.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.site" for="field_site">Site</label>
+            <input type="text" class="form-control" name="site" id="field_site"
+                    ng-model="vm.publishingHouse.site"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.publishingHouse.email"
+                    required />
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.additionalInformation" for="field_additionalInformation">AdditionalInformation</label>
+            <input type="text" class="form-control" name="additionalInformation" id="field_additionalInformation"
+                    ng-model="vm.publishingHouse.additionalInformation"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.active" for="field_active">Active</label>
+            <input type="checkbox" class="form-control" name="active" id="field_active"
+                    ng-model="vm.publishingHouse.active"
+                     />
+            <div ng-show="editForm.active.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.active.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.addressNumber" for="field_addressNumber">AddressNumber</label>
+            <input type="number" class="form-control" name="addressNumber" id="field_addressNumber"
+                    ng-model="vm.publishingHouse.addressNumber"
+                    required />
+            <div ng-show="editForm.addressNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.addressNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.addressNumber.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="alexandriaApp.publishingHouse.phone" for="field_phone">Phone</label>
+            <input type="number" class="form-control" name="phone" id="field_phone"
+                    ng-model="vm.publishingHouse.phone"
+                    required />
+            <div ng-show="editForm.phone.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phone.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.phone.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="alexandriaApp.publishingHouse.cep" for="field_cep">cep</label>
+            <select class="form-control" id="field_cep" name="cep" ng-model="vm.publishingHouse.cep" ng-options="cep as cep.number for cep in vm.ceps track by cep.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

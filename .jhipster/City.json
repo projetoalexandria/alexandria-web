@@ -1,0 +1,24 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "state",
+            "otherEntityName": "state",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "description"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160515215845",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "city",
+    "pagination": "no"
+}
